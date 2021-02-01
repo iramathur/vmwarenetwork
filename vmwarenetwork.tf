@@ -1,7 +1,11 @@
+variable "server" {}
+variable "password" {}
+variable "user_name" {}
+#variable "disk_label" {}
 provider "vsphere" {
-  user           = "cmpqa.svc@itomcmp.servicenow.com"
-  password       = "snc!23$"
-  vsphere_server = "10.198.1.13"
+  user           = "${var.user_name}"
+  password       = "${var.password}"
+  vsphere_server = "${var.server}"
 
   # If you have a self-signed cert
   allow_unverified_ssl = true
